@@ -1,5 +1,5 @@
 #  **<span style="color:green">DataPandas Consulting Ltd.</span>**
-### **<span style="color:green">Contacts: +1437 215 2483<br> WebSite : <http://datapandas.com/></span>**
+### **<span style="color:green">Contacts: cs@datapandas.com<br> WebSite : <http://datapandas.com/></span>**
 ### **Email: cs@datapandas.com**
 
 

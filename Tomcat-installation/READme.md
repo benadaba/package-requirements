@@ -1,5 +1,5 @@
 #  **<span style="color:green">DataPandas.</span>**
-### **<span style="color:green">Contacts: +1437 215 2483<br> WebSite : <http://datapandas.com/></span>**
+### **<span style="color:green">Contacts: cs@datapandas.com<br> WebSite : <http://datapandas.com/></span>**
 ### **Email: cs@datapandas.com**
 
 ## Apache Tomcat Installation And Setup In AWS EC2 Redhat Instance.

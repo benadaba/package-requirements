@@ -8,6 +8,7 @@
 ##### Pre-requisite
 + AWS Acccount.
 + Create Redhat EC2 t2.medium Instance with 4GB RAM.
++ Feel free to use Redhat EC2 t2.large Instance with 8GB RAM if your instance keeps crushing. 
 + Create Security Group and open Required ports.
    + 8081 ..etc
 + Attach Security Group to EC2 Instance.

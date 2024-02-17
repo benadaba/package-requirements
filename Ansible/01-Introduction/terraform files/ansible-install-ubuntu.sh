@@ -1,4 +1,5 @@
 #! /bin/bash
+sudo hostnamectl set-hostname ansible
 sudo adduser ansible
 echo "ansible:ansible" | chpasswd
 echo "ansible ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible

@@ -13,6 +13,14 @@
 + Attach Security Group to EC2 Instance.
 + Install java openJDK 1.8+ for SonarQube version 7.8
 
+### 
+sudo useradd jenkins
+# Grand sudo access to jenkins user
+sudo echo "jenkins ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/jenkins
+# set hostname for the sonarqube server
+sudo hostnamectl set-hostname jenkins 
+sudo su - jenkins
+
 ### Install Java JDK 1.8+ as Jenkins pre-requisit
 ### Install other softwares - git, unzip and wget
 

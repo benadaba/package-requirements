@@ -44,8 +44,8 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 ## Install Jenkins
 ```sh
 #sudo yum -y install jenkins  --nobest
-  yum install fontconfig java-17-openjdk
-  yum install jenkins
+sudo  yum install fontconfig java-17-openjdk
+sudo  yum install jenkins
 ```
 # start Jenkins  service and verify Jenkins is running
 ```sh

@@ -38,9 +38,9 @@
 ### Run jenkins containers  
 `docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk17`
 
-### 7. Ensure that SonarQube is running and Access sonarQube on the browser
+### 7. Ensure that Jenkins is running and Access Jenkins on the browser
  jenkins default port is = 8080
- get the sonarqube public ip address 
+ get the jenkins public ip address 
  publicIP:9000
 
 Once your instance is up and running, Log in to http://localhost:8080 

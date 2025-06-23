@@ -18,6 +18,7 @@
 
 ### pull docker image  
 `docker pull sonatype/nexus`  
+`docker images`
 
 ### scan image with trivy   
 #### Download and install Trivy  

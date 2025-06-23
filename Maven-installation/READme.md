@@ -24,8 +24,7 @@ cd /opt
 sudo yum update -y
 sudo yum install wget nano tree unzip git-all -y
 sudo yum install java -y
-or 
-`sudo yum install java-21-openjdk-devel java-1.8.0-openjdk-devel -y`
+#sudo yum install java-21-openjdk-devel java-1.8.0-openjdk-devel -y
 java -version
 git --version
 ```

@@ -20,9 +20,14 @@
 `docker run -d   --name sonarqube   -p 9000:9000   -v sonarqube_data:/opt/sonarqube/data   -v sonarqube_logs:/opt/sonarqube/logs   -v sonarqube_extensions:/opt/sonarqube/extensions   sonarqube:lts`
 
 ### 7. Ensure that SonarQube is running and Access sonarQube on the browser
-# sonarqube default port is = 9000
-# get the sonarqube public ip address 
-# publicIP:9000
+ sonarqube default port is = 9000
+ get the sonarqube public ip address 
+ publicIP:9000
+
+Once your instance is up and running, Log in to http://localhost:9000 using System Administrator credentials:
+
+`login: admin`
+`password: admin`
 ------------------
 
 ## SonarQube Installation And Setup In AWS EC2 Redhat Instance.

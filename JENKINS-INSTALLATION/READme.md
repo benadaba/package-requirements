@@ -2,6 +2,38 @@
 ### **<span style="color:green">Contacts: cs@datapandas.com<br> WebSite : <http://datapandas.com/></span>**
 ### **Email: cs@datapandas.com**
 
+## INSTALLATION WITH DOCKER ON AMAZONLINUX 2023
+ Tune Linux system limits, often to meet the requirements of high-performance applications like Elasticsearch, Docker, or large Java-based services. 
+ 
+`sysctl -w vm.max_map_count=524288`    
+`sysctl -w fs.file-max=131072`   
+`ulimit -n 131072`  
+`ulimit -u 8192`  
+
+### install docker  
+`sudo yum install docker -y`  
+`sudo systemctl start docker`  
+`sudo systemctl status docker`  
+
+
+### Run jenkins containers  
+`docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk17`
+
+### 7. Ensure that SonarQube is running and Access sonarQube on the browser
+ jenkins default port is = 8080
+ get the sonarqube public ip address 
+ publicIP:9000
+
+Once your instance is up and running, Log in to http://localhost:8080 
+get initial password :
+
+`docker exec -it <container-id> cat /var/jenkins_home/secrets/initialAdminPassword`
+
+------------------
+### Jenkins docker references:  
+https://hub.docker.com/r/jenkins/jenkins   
+https://github.com/jenkinsci/docker/blob/master/README.md    
+
 
 
 ## Jenkins Installation And Setup In AWS EC2 Redhat Instnace.

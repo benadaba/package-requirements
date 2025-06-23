@@ -21,6 +21,7 @@
 sudo hostnamectl set-hostname maven
 sudo su - ec2-user
 cd /opt
+sudo yum update -y
 sudo yum install wget nano tree unzip git-all -y
 sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 java -version

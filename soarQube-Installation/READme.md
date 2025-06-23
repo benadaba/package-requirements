@@ -2,7 +2,28 @@
 ### **<span style="color:green">Contacts: cs@datapandas.com<br> WebSite : <http://datapandas.com/></span>**
 ### **Email: cs@datapandas.com**
 
+## INSTALLATION WITH DOCKER ON AMAZONLINUX 2023
+ Tune Linux system limits, often to meet the requirements of high-performance applications like Elasticsearch, Docker, or large Java-based services. 
+ 
+`sysctl -w vm.max_map_count=524288`  
+`sysctl -w fs.file-max=131072`  
+`ulimit -n 131072` 
+`ulimit -u 8192` 
 
+### install docker
+`sudo yum install docker -y`
+`sudo systemctl start docker`
+`sudo systemctl status docker`
+
+
+### Run sonarqube containers
+`docker run -d   --name sonarqube   -p 9000:9000   -v sonarqube_data:/opt/sonarqube/data   -v sonarqube_logs:/opt/sonarqube/logs   -v sonarqube_extensions:/opt/sonarqube/extensions   sonarqube:lts`
+
+### 7. Ensure that SonarQube is running and Access sonarQube on the browser
+# sonarqube default port is = 9000
+# get the sonarqube public ip address 
+# publicIP:9000
+------------------
 
 ## SonarQube Installation And Setup In AWS EC2 Redhat Instance.
 ##### Prerequisite

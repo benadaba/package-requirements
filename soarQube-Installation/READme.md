@@ -29,6 +29,11 @@ Once your instance is up and running, Log in to http://localhost:9000 using Syst
 `login: admin`
 `password: admin`
 ------------------
+sonarqube docker references: 
+https://hub.docker.com/_/sonarqube  
+https://docs.sonarsource.com/sonarqube-server/latest/try-out-sonarqube/  
+
+
 
 ## SonarQube Installation And Setup In AWS EC2 Redhat Instance.
 ##### Prerequisite

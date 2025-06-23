@@ -16,6 +16,25 @@
 `sudo systemctl status docker`  
 
 
+### pull docker image  
+`docker pull jenkins/jenkins:lts-jdk17`  
+
+### scan image with trivy   
+#### Download and install Trivy  
+`TRIVY_VERSION=$(curl -s https://api.github.com/repos/aquasecurity/trivy/releases/latest | grep tag_name | cut -d '"' -f 4)`  
+`wget https://github.com/aquasecurity/trivy/releases/download/${TRIVY_VERSION}/trivy_${TRIVY_VERSION#v}_Linux-64bit.tar.gz`  
+
+`tar -zxvf trivy_${TRIVY_VERSION#v}_Linux-64bit.tar.gz`   
+`sudo mv trivy /usr/local/bin/`   
+
+
+#### Verify the installation
+`trivy --version`   
+
+#### Run a scan   
+`trivy image jenkins/jenkins:lts-jdk17`  
+
+
 ### Run jenkins containers  
 `docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk17`
 

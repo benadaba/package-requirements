@@ -17,7 +17,7 @@
 
 
 ### pull docker image  
-`docker pull jenkins/jenkins:lts-jdk17`  
+`docker pull sonatype/nexus`  
 
 ### scan image with trivy   
 #### Download and install Trivy  
@@ -32,7 +32,7 @@
 `trivy --version`   
 
 #### Run a scan   
-`trivy image jenkins/jenkins:lts-jdk17`  
+`trivy image sonatype/nexus`  
 
 
 ### Run jenkins containers  

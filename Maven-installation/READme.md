@@ -39,6 +39,7 @@ sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.10/binaries/apache-maven-3.
 sudo unzip apache-maven-3.9.10-bin.zip
 sudo rm -rf apache-maven-3.9.10-bin.zip
 sudo mv apache-maven-3.9.10/ maven
+sudo mv maven /opt/
 ```
 ## .#Step3) Set Environmental Variable  - For Specific User eg ec2-user
 ``` sh

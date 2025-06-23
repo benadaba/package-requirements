@@ -36,9 +36,10 @@
 `trivy image sonatype/nexus`  
 
 
-### Run jenkins containers  
-`mkdir -p /opt/nexus-data && chown -R 200 /opt/nexus-data
-docker run -d -p 8081:8081 --name nexus -v /opt/nexus-data:/sonatype-work sonatype/nexus`
+### Run Nexus containers  
+`mkdir -p /opt/nexus-data && chown -R 200 /opt/nexus-data`   
+
+`docker run -d -p 8081:8081 --name nexus -v /opt/nexus-data:/sonatype-work sonatype/nexus`
 
 ### 7. Ensure that Nexus is running and Access nexus on the browser
  Nexus default port is = 8081

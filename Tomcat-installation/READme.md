@@ -7,15 +7,18 @@
 1. ### Use Amazon Linux Instance
 2. install docker
 3. `sudo yum install docker -y`
-   ### start docker
+
+### start docker
 4.  `sudo systemctl start docker`
 6.  `sudo systemctl status docker`
 
-   ### Pull docker image 
+### Pull docker image 
 8.  `docker pull tomcat:8.0.20-jre8`
 
 ### run docker
-9.  `docker run -d --name tomcat -p 8080:8080 -v tomcat-dir:/usr/local/tomcat tomcat:8.0.20-jre8`
+9.  `docker run -d --name tomcat   -p 8080:8080   -v $(pwd)/tomcatdata:/usr/local/tomcat/webapps   tomcat:8.0.20-jre8`    
+
+
 
 
 ## Apache Tomcat Installation And Setup In AWS EC2 Redhat Instance.

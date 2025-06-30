@@ -1,5 +1,6 @@
 #!/bin/bash
-
+#prerequisite: 
+##make sure you user connect scp to the remote host either by -i file or having public keys available in the remote server
 # Config
 TARGET_DIR="/home/ec2-user/maven-web-application/target"
 REMOTE_USER="ec2-user"

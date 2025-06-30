@@ -12,6 +12,7 @@
 4.  `sudo systemctl start docker`
 5.  `sudo systemctl status docker`
 6.  `sudo usermod -aG docker ec2-user`
+7.  `sudo su - ec2-user`
 
 
 ### Pull docker image 

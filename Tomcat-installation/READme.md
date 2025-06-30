@@ -10,13 +10,15 @@
 
 ### start docker
 4.  `sudo systemctl start docker`
-6.  `sudo systemctl status docker`
+5.  `sudo systemctl status docker`
+6.  `sudo usermod -aG docker ec2-user`
+
 
 ### Pull docker image 
-8.  `docker pull tomcat:8.0.20-jre8`
+7.  `docker pull tomcat:8.0.20-jre8`
 
 ### run docker
-9.  `docker run -d --name tomcat   -p 8080:8080   -v $(pwd)/tomcatdata:/usr/local/tomcat/webapps   tomcat:8.0.20-jre8`    
+8.  `docker run -d --name tomcat   -p 8080:8080   -v $(pwd)/tomcatdata:/usr/local/tomcat/webapps   tomcat:8.0.20-jre8`    
 
 
 

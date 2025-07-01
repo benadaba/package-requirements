@@ -34,9 +34,39 @@
 #### Run a scan   
 `trivy image jenkins/jenkins:lts-jdk17`  
 
+### build jenkins image with docker installed jenkins containers  
+`FROM jenkins/jenkins:lts
 
+USER root
+
+#Install Docker CLI
+RUN apt-get update && \
+    apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release && \
+    curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && \
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] \
+    https://download.docker.com/linux/debian \
+    $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null && \
+    apt-get update && \
+    apt-get install -y docker-ce-cli && \
+    rm -rf /var/lib/apt/lists/*
+
+#Create docker group if it doesn't exist and add jenkins user to it
+RUN groupadd -f docker && \
+    usermod -aG docker jenkins
+
+#Switch back to Jenkins user
+#USER jenkins`
+
+### Run jenkins containers
+`docker build -t jenkins-with-docker .`
 ### Run jenkins containers  
-`docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk17`
+`docker run -d \
+  --name jenkins-docker \
+  -p 8080:8080 -p 50000:50000 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v jenkins_home:/var/jenkins_home \
+  jenkins-with-docker`
 
 ### 7. Ensure that Jenkins is running and Access Jenkins on the browser
  jenkins default port is = 8080

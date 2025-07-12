@@ -87,10 +87,11 @@ sudo yum install java -y
 ```
 ### Download nexus software and extract it (unzip).
 ```sh
-sudo wget http://download.sonatype.com/nexus/3/nexus-3.15.2-01-unix.tar.gz 
-sudo tar -zxvf nexus-3.15.2-01-unix.tar.gz
-sudo mv /opt/nexus-3.15.2-01 /opt/nexus
-sudo rm -rf nexus-3.15.2-01-unix.tar.gz
+#sudo wget http://download.sonatype.com/nexus/3/nexus-3.15.2-01-unix.tar.gz
+sudo wget https://download.sonatype.com/nexus/3/nexus-3.82.0-08-linux-x86_64.tar.gz
+sudo tar -zxvf nexus-3.82.0-08-linux-x86_64.tar.gz
+sudo mv /opt/nexus-3.82.0-08 /opt/nexus
+sudo rm -rf nexus-3.82.0-08-linux-x86_64.tar.gz
 ```
 
 ## Grant permissions for nexus user to start and manage nexus service
@@ -110,11 +111,41 @@ echo  'run_as_user="nexus" ' > /opt/nexus/bin/nexus.rc
 
 ##  CONFIGURE NEXUS TO RUN AS A SERVICE 
 ```sh
-sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
 
-#9 Enable and start the nexus services
-sudo systemctl enable nexus
-sudo systemctl start nexus
-sudo systemctl status nexus
-echo "end of nexus installation"
+cd /etc/systemd/system/
+sudo vi nexus.service
+
+#input thes content below into the nexus.service file
+
+[Unit]
+Description=nexus service
+After=network.target
+  
+[Service]
+Type=forking
+LimitNOFILE=65536
+ExecStart=/opt/nexus/bin/nexus start
+ExecStop=/opt/nexus/bin/nexus stop
+
+User=nexus
+Restart=on-abort
+TimeoutSec=600
+  
+[Install]
+WantedBy=multi-user.target
+
 ```
+### Activate the service with the following commands:
+```sh
+
+sudo systemctl daemon-reload
+sudo systemctl enable nexus.service
+sudo systemctl start nexus.service
+sudo systemctl status nexus.service
+```
+
+------------------
+references
+1.  https://stackoverflow.com/questions/55111719/installing-nexus-error-the-version-of-the-jvm-must-be-at-least-1-8-and-at-most
+2. https://help.sonatype.com/en/download.html
+3. https://help.sonatype.com/en/run-as-a-service.html

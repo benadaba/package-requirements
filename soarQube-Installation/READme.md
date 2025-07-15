@@ -5,15 +5,17 @@
 ## INSTALLATION WITH DOCKER ON AMAZONLINUX 2023
  Tune Linux system limits, often to meet the requirements of high-performance applications like Elasticsearch, Docker, or large Java-based services. 
  
-`sysctl -w vm.max_map_count=524288`  
-`sysctl -w fs.file-max=131072`  
-`ulimit -n 131072` 
-`ulimit -u 8192` 
+`sudo sysctl -w vm.max_map_count=524288`  
+`sudo sysctl -w fs.file-max=131072`  
+`sudo ulimit -n 131072` 
+`sudo ulimit -u 8192` 
 
 ### install docker
-`sudo yum install docker -y`
-`sudo systemctl start docker`
-`sudo systemctl status docker`
+`sudo yum install docker -y`  
+`sudo systemctl status docker`   
+`sudo systemctl enable docker`  
+`sudo systemctl start docker`    
+`sudo systemctl status docker`  
 
 
 ### Run sonarqube containers

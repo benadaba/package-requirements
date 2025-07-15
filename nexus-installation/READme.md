@@ -143,6 +143,12 @@ sudo systemctl enable nexus.service
 sudo systemctl start nexus.service
 sudo systemctl status nexus.service
 ```
+#### Ensure that Nexus is running and access nexus in the browser   
+Nexus default port is = `8081` get the Nexus public ip address `publicIP:8081` 
+
+Once your instance is up and running, Log in to http://localhost:8080 get initial password :
+Default credentials are: admin / admin123
+
 
 ------------------
 references

@@ -65,12 +65,14 @@ RUN groupadd -f docker && \
 ### Run jenkins containers
 `docker build -t jenkins-with-docker .`
 ### Run jenkins containers  
-`docker run -d \
+```shell
+docker run -d \
   --name jenkins-docker \
   -p 8080:8080 -p 50000:50000 \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v jenkins_home:/var/jenkins_home \
-  jenkins-with-docker`
+  jenkins-with-docker
+```
 
 ### 7. Ensure that Jenkins is running and Access Jenkins on the browser
  jenkins default port is = 8080

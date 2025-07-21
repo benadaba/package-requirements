@@ -19,7 +19,7 @@
 7.  `docker pull tomcat:8.0.20-jre8`
 
 ### run docker
-8.  `docker run -d --name tomcat   -p 8080:8080   -v $(pwd)/tomcatdata:/usr/local/tomcat/webapps   tomcat:8.0.20-jre8`    
+8.  `docker run -d --name tomcat   -p 8080:8080   -v tomcatdata:/usr/local/tomcat/webapps   tomcat:8.0.20-jre8`    
 
 
 

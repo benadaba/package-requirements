@@ -11,10 +11,10 @@
 `sudo ulimit -u 8192`  
 
 ### install docker  
-`sudo yum install docker -y`
-`sudo systemctl enable docker` 
-`sudo systemctl start docker`  
-`sudo systemctl status docker`  
+`sudo yum install docker -y`  
+`sudo systemctl enable docker`     
+`sudo systemctl start docker`    
+`sudo systemctl status docker`   
 
 ### add ec2-user to the docker group  
 `sudo usermod -aG docker ec2-user`  

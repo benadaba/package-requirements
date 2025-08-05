@@ -92,7 +92,7 @@ https://github.com/jenkinsci/docker/blob/master/README.md
 
 
 
-## Jenkins Installation And Setup In AWS EC2 Redhat Instnace.
+## Jenkins Installation And Setup In AWS EC2 Amazon linux 2023 or Redhat Instnace.
 ##### Prerequisite
 + AWS Acccount.
 + Create Redhat EC2 t2.medium Instance with 4GB RAM.
@@ -116,7 +116,8 @@ sudo su - jenkins
 ``` sh
 sudo hostnamectl set-hostname ci
 sudo yum -y install unzip wget tree git
-sudo yum install java-11-openjdk -y
+#sudo yum install java-11-openjdk -y
+sudo yum install java-21-amazon-corretto-headless
 ```
 ###  Add Jenkins Repository and key
 ```sh
@@ -132,11 +133,25 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 ## Install Jenkins
 ```sh
 #sudo yum -y install jenkins  --nobest
-sudo  yum install fontconfig java-17-openjdk
+#sudo  yum install fontconfig java-17-openjdk
 sudo  yum install jenkins
 ```
+
+## Point jenkins to the java 21 home
+```sh
+vi /usr/lib/systemd/system/jenkins.service
+
+look for  a line that looks like
+#Environment="JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64"
+
+replace it with
+Environment="JAVA_HOME=/usr/bin/java"
+```
+
+
 # start Jenkins  service and verify Jenkins is running
 ```sh
+sudo systemctl daemon-reload
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 sudo systemctl status jenkins

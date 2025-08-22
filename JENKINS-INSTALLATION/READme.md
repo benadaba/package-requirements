@@ -137,7 +137,7 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 sudo  yum install jenkins
 ```
 
-## Point jenkins to the java 21 home
+## Point jenkins to the java 21 home (optional)
 ```sh
 #vi /usr/lib/systemd/system/jenkins.service
 

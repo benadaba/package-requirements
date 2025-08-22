@@ -139,13 +139,13 @@ sudo  yum install jenkins
 
 ## Point jenkins to the java 21 home
 ```sh
-vi /usr/lib/systemd/system/jenkins.service
+#vi /usr/lib/systemd/system/jenkins.service
 
-look for  a line that looks like
+#look for  a line that looks like
 #Environment="JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64"
 
-replace it with
-Environment="JAVA_HOME=/usr/bin/java"
+#replace it with
+#Environment="JAVA_HOME=/usr/bin/java"
 ```
 
 

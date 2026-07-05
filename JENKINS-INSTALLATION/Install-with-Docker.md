@@ -39,8 +39,15 @@
 #### Run a scan   
 `trivy image jenkins/jenkins:lts-jdk17`  
 
-### build jenkins image with docker installed jenkins containers  
-`FROM jenkins/jenkins:lts
+### Create a Dockerfile
+`touch Dockerfile`
+
+### Copy the content of the Dockerfile below and "vi" into the Dockerfile and paste the into the Dockerfile you created above. 
+`vi Dockerfile`
+
+### Content of the Dockerfile  
+```
+FROM jenkins/jenkins:lts
 
 USER root
 
@@ -63,9 +70,11 @@ RUN groupadd -f docker && \
 #Switch back to Jenkins user
 #USER jenkins`
 
-### Run jenkins containers
+```
+
+### Build jenkins container (note: the Dockerfile you created above should be in the same directory where you will be running the below command)
 `docker build -t jenkins-with-docker .`
-### Run jenkins containers  
+### Run jenkins container  
 ```shell
 docker run -d \
   --name jenkins-docker \

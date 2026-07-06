@@ -87,7 +87,7 @@ docker run -d \
 ### 7. Ensure that Jenkins is running and Access Jenkins on the browser
  jenkins default port is = 8080
  get the jenkins public ip address 
- publicIP:9000
+ publicIP:8080
 
 Once your instance is up and running, Log in to http://localhost:8080 
 get initial password :

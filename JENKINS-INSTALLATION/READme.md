@@ -6,7 +6,7 @@
 ## Jenkins Installation And Setup In AWS EC2 Amazon linux 2023 or Redhat Instnace.
 ##### Prerequisite
 + AWS Acccount.
-+ Create Redhat EC2 t2.medium Instance with 4GB RAM.
++ Create AWS EC2 Amazon linux 2023 or Redhat EC2 t2.medium Instance with 4GB RAM.
 + Create Security Group and open Required ports.
    + 8080 got Jenkins, ..etc
 + Attach Security Group to EC2 Instance.
